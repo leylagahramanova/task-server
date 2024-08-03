@@ -4,10 +4,12 @@ import userRoutes from '../server/routes/users.js'; // Adjust the path as needed
 import authRoutes from '../server/routes/auth.js'; // Adjust the path as needed
 import tasksRoutes from '../server/routes/tasks.js'; // Adjust the path as needed
 
-// Initialize Express
+// Initialize Express 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://task-client-jthm45pu9-leylagahramanovas-projects.v', // Replace with your client's URL
+}));
 
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
